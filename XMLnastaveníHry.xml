@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="XSLnastaveniHry.xsl"?>
+<nastaveni>
+    <hra>
+                        <nick>Hamilton666</nick>
+                        <obtiznost>Tezka</obtiznost>
+                        <tutorial povoleno="Ne"/>
+                        <autoBrzdy povoleno="Ano"/>
+                        <rady povoleno="Ne"/>
+                        <auto>Ferrari</auto>
+                        <trat>Monte Carlo</trat>
+                        <pocetZavodniku hodnota="12"/>
+    </hra>
+    
+    <grafika>
+        <video>
+			<rozliseni>1024×600</rozliseni>
+			<mod>Fullscreen</mod>
+			<gamma hodnota="65" />
+			<jas hodnota="48" />
+                        <titulky>English</titulky>
+			<vertikalniSynchronizace povoleno="Ano"/>
+                        <directX>DirectX 11</directX>
+	</video>
+        <videoKvalita>
+                        <textura>Vysoke</textura>
+                        <stiny>Vysoke</stiny>
+                        <autoKvalita>Vysoke</autoKvalita>
+                        <teren>Nizke</teren>
+                        <voda>Stredni</voda>                       
+                        <antiAliasing>MSAA</antiAliasing>
+                        <anisotropickeFiltrovani hodnota="16"/>
+                        <efekty>Vysoke</efekty>
+                        <vicejadroveVykreslovani povoleno="Ano"/>                       
+            
+        </videoKvalita>
+               	       
+    </grafika>
+    
+    <zvuk>
+        
+        <zakladni>
+            <celkovaHlasitost>79</celkovaHlasitost>
+            <komentator>50</komentator>
+            <fanousci>95</fanousci>
+            <motor>100</motor>
+            <hudbaVPozadi>29</hudbaVPozadi>
+            <zvukKdyzJeHraNaPozadi povoleno="Ne"/>
+                                    
+        </zakladni>
+        <pokrocile>
+            
+            <konfiguraceReproduktoru>Sluchatka</konfiguraceReproduktoru>
+            <posledniKoloFanousci>100</posledniKoloFanousci>
+            
+        </pokrocile>
+        
+        <hlasovaKomunikace povoleno="Ano">
+            
+            <hlasitost>50</hlasitost>
+            <citlivostMikrofonu>35</citlivostMikrofonu>
+            
+        </hlasovaKomunikace>
+               
+    </zvuk>
+    
+    <multiplayer>
+        
+        <port hodnota="9500" />    
+        <chat povoleno="Ano"/>
+        <aktualniPing>39</aktualniPing>
+        <maxPing>250</maxPing>
+        <server>Czech</server>
+                      
+    </multiplayer>
+    
+    <zarizeni>
+        <vstup>GamePad</vstup>
+        <citlivost>55</citlivost>
+        <obraceniMysi horizont="Ne" vertikal="Ne" />
+        <obraceniGamePade horizontt="Ne" vertikall="Ano" />
+        
+        <pohybVpred>w</pohybVpred>
+        <brzda>s</brzda>
+        <pohybVlevo>a</pohybVlevo>
+        <pohybVpravo>d</pohybVpravo>
+               
+    </zarizeni>
+    
+    
+</nastaveni>
+

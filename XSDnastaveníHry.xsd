@@ -1,0 +1,347 @@
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="nastaveni">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="hra">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="nick">
+                <xs:simpleType>
+                    <xs:restriction base="xs:string">
+                            <xs:pattern value="[a-zA-Z0-9]{0,16}"/> <!-- omezeni na psani nicku --> 
+			</xs:restriction>
+		</xs:simpleType>
+              </xs:element>
+              <xs:element name="obtiznost">
+                  <xs:simpleType> 
+                      <xs:restriction base="xs:string">             <!-- omezeni vyberu obtiznosti--> 
+                            <xs:enumeration value="Lehka"/>
+                            <xs:enumeration value="Stredni"/>
+                            <xs:enumeration value="Tezka"/>
+                      </xs:restriction>
+                  </xs:simpleType>
+              </xs:element>
+              <xs:element name="tutorial">
+                <xs:complexType>                                    
+                      <xs:attribute type="xs:boolean" name="povoleno"/>      <!-- omezeni bud ano ne -->                               
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="autoBrzdy">
+                <xs:complexType>                  
+                      <xs:attribute type="xs:boolean" name="povoleno"/> <!-- omezeni bud ano ne -->
+                  </xs:complexType>                                 
+              </xs:element>
+              <xs:element name="rady">
+                <xs:complexType>
+                 
+                      <xs:attribute type="xs:boolean" name="povoleno"/> <!-- omezeni bud ano ne -->
+                    
+                </xs:complexType>
+              </xs:element>
+              <xs:element type="xs:string" name="auto"/>
+              <xs:element type="xs:string" name="trat"/>
+              <xs:element name="pocetZavodniku" default="12">
+                <xs:complexType>
+                  <xs:simpleContent>
+                    <xs:extension base="xs:double">
+                        <xs:attribute type="xs:byte" name="hodnota">
+                            <xs:simpleType>
+				<xs:restriction base="xs:nonNegativeInteger"> <!-- omezeni pro pocetzavodniku max 20 a ne pod 0 -->
+					<xs:minInclusive value="1"/>
+					<xs:maxInclusive value="20"/>
+                        	</xs:restriction>
+                            </xs:simpleType>                            
+                        </xs:attribute>
+                    </xs:extension>
+                  </xs:simpleContent>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="grafika">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="video">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="rozliseni" default="1024x600>  
+                    <xs:simpleType>
+			<xs:restriction base="xs:string">            <!-- omezeni vyberu rozliseni -->
+                                <xs:enumeration value="1024x600"/>
+				<xs:enumeration value="800x600"/>
+                                <xs:enumeration value="1366×768"/>
+                        </xs:restriction>
+		</xs:simpleType>
+                    </xs:element>
+                    <xs:element type="xs:string" name="mod"/>
+                    <xs:element name="gamma">
+                      <xs:complexType>
+                        <xs:simpleContent>
+                          <xs:extension>
+                            <xs:attribute name="value" default="50">
+				<xs:simpleType>
+                                    <xs:restriction base="xs:nonNegativeInteger">   <!-- omezeni pro gamu max 100 a ne pod 0 -->
+					<xs:maxInclusive value="100"/>  
+                                    </xs:restriction>
+				</xs:simpleType>
+                            </xs:attribute>
+                          </xs:extension>
+                        </xs:simpleContent>
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="jas">
+                      <xs:complexType>
+                        <xs:simpleContent>
+                          <xs:extension base="xs:string">
+                            <xs:attribute type="xs:byte" name="hodnota"/>
+                          </xs:extension>
+                        </xs:simpleContent>
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element type="xs:string" name="titulky"/>
+                    <xs:element name="vertikalniSynchronizace">
+                      <xs:complexType>
+                        <xs:simpleContent>
+                          <xs:extension base="xs:string">
+                            <xs:attribute type="xs:string" name="povoleno"/>
+                          </xs:extension>
+                        </xs:simpleContent>
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element type="xs:string" name="directX"/>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="videoKvalita">
+                <xs:complexType>
+                  <xs:sequence>
+                      <xs:element  name="textura">
+                          <xs:simpleType>
+				<xs:restriction base="xs:string">           <!-- omezeni vyberu kvality textur-->
+					<xs:enumeration value="Vysoke"/>
+					<xs:enumeration value="Stredni"/>
+					<xs:enumeration value="Nizke"/>
+				</xs:restriction>
+			</xs:simpleType>
+                      </xs:element>
+                      <xs:element  name="stiny">
+                          <xs:simpleType>
+				<xs:restriction base="xs:string">           <!-- omezeni vyberu kvality stinu-->
+					<xs:enumeration value="Vysoke"/>
+					<xs:enumeration value="Stredni"/>
+					<xs:enumeration value="Nizke"/>
+				</xs:restriction>
+			</xs:simpleType>
+                      </xs:element>
+                      <xs:element  name="autoKvalita">
+                          <xs:simpleType>
+				<xs:restriction base="xs:string">           <!-- omezeni vyberu kvality auta-->
+					<xs:enumeration value="Vysoke"/>
+					<xs:enumeration value="Stredni"/>
+					<xs:enumeration value="Nizke"/>
+				</xs:restriction>
+			</xs:simpleType>
+                      </xs:element>
+                      <xs:element  name="teren">
+                          <xs:simpleType>
+				<xs:restriction base="xs:string">               <!-- omezeni vyberu kvality terenu-->
+					<xs:enumeration value="Vysoke"/>
+					<xs:enumeration value="Stredni"/>
+					<xs:enumeration value="Nizke"/>
+				</xs:restriction>
+			</xs:simpleType>
+                      </xs:element>
+                      <xs:element  name="voda">
+                          <xs:simpleType>
+				<xs:restriction base="xs:string">           <!-- omezeni vyberu kvality vody-->
+					<xs:enumeration value="Vysoke"/>
+					<xs:enumeration value="Stredni"/>
+					<xs:enumeration value="Nizke"/>
+				</xs:restriction>
+			</xs:simpleType>
+                      </xs:element>
+                      <xs:element  name="antiAliasing">
+                          <xs:simpleType>
+				<xs:restriction base="xs:string">           <!-- omezeni vyberu antialiasingu-->
+					<xs:enumeration value="MSAA"/>
+					<xs:enumeration value="SSAA"/>
+					<xs:enumeration value="FXAA"/>
+                                        <xs:enumeration value="CSAA"/>
+				</xs:restriction>
+			</xs:simpleType>
+                      </xs:element>
+                    <xs:element name="anisotropickeFiltrovani">
+                      <xs:complexType>
+                        <xs:simpleContent>
+                          <xs:extension base="xs:string">
+                            <xs:attribute type="xs:byte" name="hodnota"/>
+                          </xs:extension>
+                        </xs:simpleContent>
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element type="xs:string" name="efekty"/>
+                    <xs:element name="vicejadroveVykreslovani">
+                      <xs:complexType>
+                        <xs:simpleContent>
+                          <xs:extension base="xs:string">
+                            <xs:attribute type="xs:string" name="povoleno"/>
+                          </xs:extension>
+                        </xs:simpleContent>
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="zvuk">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="zakladni">
+                <xs:complexType>
+                  <xs:sequence>
+                      <xs:element name="celkovaHlasitost" default="79">
+                          <xs:simpleType>
+				<xs:restriction base="xs:nonNegativeInteger"> <!-- omezeni pro celkovou hlasitost max 100 a nezaporny cisla-->
+					<xs:maxInclusive value="100"/>
+				</xs:restriction>
+			</xs:simpleType>                                                  
+                      </xs:element>
+                      <xs:element  name="komentator" default="50">
+                          <xs:simpleType>
+				<xs:restriction base="xs:nonNegativeInteger"> <!-- omezeni pro hlasitost komentatora max 100 a nezaporny cisla-->
+					<xs:maxInclusive value="100"/>
+				</xs:restriction>
+			</xs:simpleType>
+                      </xs:element>
+                      <xs:element  name="fanousci" default="95">
+                          <xs:simpleType>
+				<xs:restriction base="xs:nonNegativeInteger"> <!-- omezeni pro hlasitost fanousky max 100 a nezaporny cisla-->
+					<xs:maxInclusive value="100"/>
+				</xs:restriction>
+			</xs:simpleType>
+                      </xs:element>
+                      <xs:element name="motor" default="100"> 
+                      <xs:simpleType>
+				<xs:restriction base="xs:nonNegativeInteger"> <!-- omezeni pro hlasitost motoru max 100 a nezaporny cisla-->
+					<xs:maxInclusive value="100"/>
+				</xs:restriction>
+			</xs:simpleType>
+                      </xs:element>
+                      <xs:element name="hudbaVPozadi" default="29">
+                          <xs:simpleType>
+				<xs:restriction base="xs:nonNegativeInteger"> <!-- omezeni pro hlasitost hudby v pozadi max 100 a nezaporny cisla-->
+					<xs:maxInclusive value="100"/>
+				</xs:restriction>
+			</xs:simpleType>
+                      </xs:element>
+                    <xs:element name="zvukKdyzJeHraNaPozadi">  
+                      <xs:complexType>
+                        <xs:simpleContent>
+                          <xs:extension base="xs:string">
+                            <xs:attribute type="xs:boolean" name="povoleno"/> <!-- omezeni bud ano ne -->
+                          </xs:extension>
+                        </xs:simpleContent>
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="pokrocile">
+                <xs:complexType>
+                  <xs:sequence>
+                      <xs:element name="konfiguraceReproduktoru">
+                          <xs:simpleType>
+				<xs:restriction base="xs:string">           <!-- omezeni vyberu vystupu zvuku-->
+					<xs:enumeration value="Sluchatka"/>
+					<xs:enumeration value="Reproduktor"/>					
+				</xs:restriction>
+			</xs:simpleType>                         
+                      </xs:element>
+                    <xs:element type="xs:byte" name="posledniKoloFanousci"/>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="hlasovaKomunikace">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element type="xs:byte" name="hlasitost"/>
+                    <xs:element type="xs:byte" name="citlivostMikrofonu"/>
+                  </xs:sequence>
+                  <xs:attribute type="xs:boolean" name="povoleno"/>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="multiplayer">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="port">
+                <xs:complexType>
+                  <xs:simpleContent>
+                    <xs:extension base="xs:string">
+                      <xs:attribute type="xs:short" name="hodnota"/>
+                    </xs:extension>
+                  </xs:simpleContent>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="chat">
+                <xs:complexType>
+                  <xs:simpleContent>
+                    <xs:extension base="xs:string">
+                      <xs:attribute type="xs:boolean" name="povoleno"/>
+                    </xs:extension>
+                  </xs:simpleContent>
+                </xs:complexType>
+              </xs:element>
+              <xs:element type="xs:byte" name="aktualniPing"/>
+              <xs:element name="maxPing">
+                  <xs:simpleType>
+                                    <xs:restriction base="xs:byte">          <!-- omezeni pro ping max 250-->
+					<xs:maxInclusive value="250"/>  
+                                    </xs:restriction>
+                    </xs:simpleType>                  
+              </xs:element>
+              <xs:element type="xs:string" name="server"/>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="zarizeni">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element type="xs:string" name="vstup"/>
+              <xs:element type="xs:byte" name="citlivost"/>
+              <xs:element name="obraceniMysi">
+                <xs:complexType>
+                  <xs:simpleContent>
+                    <xs:extension base="xs:string">
+                      <xs:attribute type="xs:boolean" name="horizont"/>
+                      <xs:attribute type="xs:boolean" name="vertikal"/>
+                    </xs:extension>
+                  </xs:simpleContent>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="obraceniGamePade">
+                <xs:complexType>
+                  <xs:simpleContent>
+                    <xs:extension base="xs:string">
+                      <xs:attribute type="xs:boolean" name="horizontt"/>
+                      <xs:attribute type="xs:boolean" name="vertikall"/>
+                    </xs:extension>
+                  </xs:simpleContent>
+                </xs:complexType>
+              </xs:element>
+              <xs:element type="xs:string" name="pohybVpred"/>
+              <xs:element type="xs:string" name="brzda"/>
+              <xs:element type="xs:string" name="pohybVlevo"/>
+              <xs:element type="xs:string" name="pohybVpravo"/>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

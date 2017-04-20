@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Dokumentace semestrální práce z předmětu Značkovací jazyky</title>
+		<meta charset="windows-1250">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	</head>
+	<body>
+		<header>
+			<h1>Dokumentace semestrální práce z předmětu Značkovací jazyky</h1>
+		</header>
+		
+		<nav id="nav">
+			<h2>Obsah</h2>
+			<ul>
+				<li><a href="#nav">	Obsah </a></li>
+				<li><a href="#uvod">	Úvod</a></li>
+				<li><a href="#metodika">		Metodika</a></li>
+				<li><a href="#elementy">	Popis elementů a atributů</a></li>
+				<li><a href="#transformace">	transformace JSON</a></li>
+				<li><a href="#zaver">			Závěr</a></li>
+				
+			</ul>
+		</nav>
+		
+		<main> 
+			<article>
+				<section id="uvod">
+					<h2>Úvod</h2>
+					<p>
+						Při Semestrální práci jsem si osahal psaní formou HTML5, dále vytvoření XML dokumentu a posléze XSD a transformace pomocí JSON. Dokument byl tvořen jako konfigurační soubor počítačové hry. Vybral jsem si aplikaci nastavení počítačové hry respektivě závodní hry.
+					</p>
+				</section>      
+				
+				<section id="metodika">
+					<h2>Metodika</h2>
+					<p>Dokumenty byli vytvořeny pomocí <i>NetBeans IDE 8.2</i>.</p>
+					<p>
+                                            Nejprve byl vytvořen  XML dokument se jmény elementů a atributů. Ten byl následně konverttován do XSD pomocí webové aplikace <a href="http://www.freeformatter.com/xsd-generator.html">Freeformater</a> a dále ručně poupraven a doplněno o nějaké podmínky k různým elementum nebo atributům.                 
+					</p>
+                                        <p>
+                                            Dále jsem ručně napsal XSL dokument a  pomocí cyklu for-each a JSON vypsal nastavení apliakce neboli závodní hry.
+                                        </p>
+                                        <p>
+                                            Dále jsem také použil programy jako <a href="http://www.pspad.com/cz/">PSPad</a> a prohlížeče <a href="https://www.mozilla.org/cs/firefox/new/">Mozilla Firefox</a> a <a href="https://www.google.com/chrome/">Google Chrome</a>.
+                                        </p>
+				</section>
+				
+				<section id="elementy">
+					<h2>Popis elementů a atributů</h2>
+
+					<table border="1">
+						<tr>
+							<th>Popis</th>
+							<th>Adresa neboli cesta</th>
+						</tr>
+						<tr>
+							<td>Přezdívka hráče ve hře</td>
+							<td>nastavení/hra/nick</td>
+						</tr>
+						<tr>
+							<td>Zvolení obtížnosti ve hře</td>
+							<td>nastavení/hra/obtiznost</td>
+						</tr>
+						<tr>
+							<td>Povolení tutoriálu Ano/Ne</td>
+							<td>nastavení/hra/tutorial</td>
+						</tr>
+						<tr>
+							<td>Povolení asistence automatickych brzd pro hráče Ano/Ne</td>
+							<td>nastavení/hra/autoBrzdy</td>
+						</tr>
+						<tr>
+							<td>Povolení rad ve hře</td>
+							<td>nastavení/hra/rady</td>
+						</tr>
+						<tr>
+							<td>Výběr závodního auta</td>
+							<td>nastavení/hra/auto</td>
+						</tr>
+						<tr>
+							<td>Výběr závodní tratě</td>
+							<td>nastavení/hra/trat</td>
+						</tr>
+						<tr>
+							<td>Výběr počtu závodníku kteří pojedou proti Vám</td>
+							<td>nastavení/hra/pocetZavodniku</td>
+						</tr>
+						<tr>
+							<td>Výběr rozlišení</td>
+							<td>nastavení/grafika/video/rozlišení</td>
+						</tr>
+						<tr>
+							<td>Výběr modu obrazovky</td>
+							<td>nastavení/grafika/video/mod</td>
+						</tr>
+						<tr>
+							<td>Nastavení gammy</td>
+							<td>nastavení/grafika/video/gamma</td>
+						</tr>
+						<tr>
+							<td>Nastavení jasu</td>
+							<td>nastavení/grafika/video/jas</td>
+						</tr>
+						<tr>
+							<td>Výběr titulků ve hře</td>
+							<td>nastavení/grafika/video/titulky</td>
+						</tr>
+						<tr>
+							<td>Vertikální synchronizace Ano/Ne</td>
+							<td>nastavení/grafika/video/vertikálníSynchronizace</td>
+						</tr>
+						<tr>
+							<td>Výběr DirectX</td>
+							<td>nastavení/grafika/video/directX</td>
+						</tr>
+						<tr>
+							<td>Výběr kvality textur ve hře</td>
+							<td>nastavení/grafika/videoKvalita/textura</td>
+						</tr>
+						<tr>
+							<td>Výběr kvality stínů ve hře</td>
+							<td>nastavení/grafika/videoKvalita/stíny</td>
+						</tr>
+						<tr>
+							<td>Kvalita vykreslení auta ve hře</td>
+							<td>nastavení/grafika/videoKvalita/autoKvalita</td>
+						</tr>
+						<tr>
+							<td>Kvalita vykreslení terénu</td>
+							<td>nastavení/grafika/videoKvalita/terén</td>
+						</tr>
+						<tr>
+							<td>Kvalita vykreslení vody</td>
+							<td>nastavení/grafika/videoKvalita/voda</td>
+						</tr>
+						<tr>
+							<td>Výběr Antialiasingu</td>
+							<td>nastavení/grafika/videoKvalita/antiAliasing</td>
+						</tr>
+						<tr>
+							<td>Nastavení anisotropickeho filtrování</td>
+							<td>nastavení/grafika/videoKvalita/anisotropickeFiltrovani</td>
+						</tr>
+						<tr>
+							<td>Výběr kvality efektů</td>
+							<td>nastavení/grafika/videoKvalita/efekty</td>
+						</tr>
+						<tr>
+							<td>Nastavení vicejádrovéhoVykreslování Ano/Ne</td>
+							<td>nastavení/grafika/videoKvalita/vicejadroveVykreslování</td>
+						</tr>
+						<tr>
+							<td>Nastavení celkové hlasitosti</td>
+							<td>nastavení/zvuk/základní/celkováHlasitost</td>
+						</tr>
+						<tr>
+							<td>Nastavení hlasitosti komentátora</td>
+							<td>nastavení/zvuk/základní/komentator</td>
+						</tr>
+						<tr>
+							<td>Nastavení hlasitosti fanoušků</td>
+							<td>nastavení/zvuk/základní/fanoušci</td>
+						</tr>
+						<tr>
+							<td>Nastavení hlasitosti motoru u auta</td>
+							<td>nastavení/zvuk/základní/motor</td>
+						</tr>
+						<tr>
+							<td>Nastavení hlasitosti melodie v pozadí</td>
+							<td>nastavení/zvuk/základní/hudbaVPozadí</td>
+						</tr>
+						<tr>
+							<td>Nastavení hlasitosti když hru schodíte na plochu</td>
+							<td>nastavení/zvuk/základní/zvukKdyzJeHraNaPozadí</td>
+						</tr>
+						<tr>
+							<td>Výběr výstupu pro zvuk</td>
+							<td>nastavení/zvuk/pokročilé/KonfiguraceReproduktoru</td>
+						</tr>
+						<tr>
+							<td>Hlasitost fanoušků při posledním kole</td>
+							<td>nastavení/zvuk/pokročilé/PosledníKoloFanoušci</td>
+						</tr>
+						<tr>
+							<td>Nastavení hlasitosti s ostatními hráči ve hře</td>
+							<td>nastavení/zvuk/hlasovaKomunikace/hlasitost</td>
+						</tr>
+						<tr>
+							<td>Nastavení citlivosti mikrofonu</td>
+							<td>nastavení/zvuk/hlasovaKomunikace/citlivostKomunikace</td>
+						</tr>
+						<tr>
+							<td>číslo portu hráče</td>
+							<td>nastavení/multiplayer/port</td>
+						</tr>
+						<tr>
+							<td>Povolení chatu Ano/Ne</td>
+							<td>nastavení/multiplayer/chat</td>
+						</tr>
+						<tr>
+							<td>Váš aktuální Ping</td>
+							<td>nastavení/multiplayer/aktuálníping</td>
+						</tr>
+						<tr>
+							<td>Maximální hodnota vašeho Pingu</td>
+							<td>nastavení/multiplayer/maxPing</td>
+						</tr>
+						<tr>
+							<td>Výběr serveru</td>
+							<td>nastavení/multiplayer/server</td>
+						</tr>
+						<tr>
+							<td>Výběr zařízení kterým budete řídit</td>
+							<td>nastavení/zařízení/vstup</td>
+						</tr>
+						<tr>
+							<td>Citlivost zatáčení</td>
+							<td>nastavení/zařízení/citlivost</td>
+						</tr>
+						<tr>
+							<td>Možnost prohození vertikálu a horizontu na myši</td>
+							<td>nastavení/zařízení/obrácenímyši</td>
+						</tr>
+						<tr>
+							<td>Možnost prohození vertikálu a horizontu na gamepadu</td>
+							<td>nastavení/zařízení/obráceníGamePadu</td>
+						</tr>
+						<tr>
+							<td>Nadefinovaný pohyb dopředu</td>
+							<td>nastavení/zařízení/PohybVpřed</td>
+						</tr>
+						<tr>
+							<td>Nadefinovaný pohybu vzad neboli brzda</td>
+							<td>nastavení/zařízení/brzda</td>
+						</tr>
+						<tr>
+							<td>Nadefinovaný pohyb do leva</td>
+							<td>nastavení/zařízení/PohybVlevo</td>
+						</tr>
+						<tr>
+							<td>Nadefinovaný pohyb do prava</td>
+							<td>nastavení/zařízení/PohybVpravo</td>
+						</tr>
+					
+					</table>
+				</section>
+				
+				<section id="transformace">
+					<h2>Popis transformace</h2>
+		
+
+					<h3>JSON</h3>
+					<p>
+						Transformace pomocí cyklu for-each vybere, a pomocí JSON odešle informace o všech nastaveních aplikace. 
+					</p>
+				</section>
+				
+				<section id="zaver">
+					<h2>Závěr</h2>
+					<p>
+						Jazyk XML je používán pro strukturované ukládání dat nebo při komunikaci mezi programy. Jeho výhodou je dobrá čitelnost a šikoké možnosti filtrování a omezování dat a datovýh typů. Práce s ním je také snadná, protože k jeho editaci stačí pouze textový editor.
+					</p>
+                                        <p>
+                                            Autor: Jan Dokoupil,  Česká Zemědělská univerzita Praha, dne 20.4.2017
+                                        </p>
+				</section>
+			</article>
+		</main>
+		
+		
+	</body>
+</html>
